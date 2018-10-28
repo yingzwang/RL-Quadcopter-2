@@ -2,14 +2,14 @@
 
 *Teach a Quadcopter How to Fly!*
 
-In this project, you will design an agent to fly a quadcopter, and then train it using a reinforcement learning algorithm of your choice! 
+In this project, I designed a reinforcement agent to fly a quadcopter. I chose deep deterministic policy gradient ([DDPG](https://arxiv.org/abs/1509.02971)) algorithm, which suits well the the continuous control problem of a quadcopter.
 
 ## Project Instructions
 
 1. Clone the repository and navigate to the downloaded folder.
 
 ```
-git clone https://github.com/udacity/RL-Quadcopter-2.git
+git clone https://github.com/yingzwang/RL-Quadcopter-2.git
 cd RL-Quadcopter-2
 ```
 

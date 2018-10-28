@@ -171,7 +171,7 @@ class ddpg_agent:
             ep_reward = 0
             ep_ave_qmax = 0
             t_step = 0
-            p = 1 # noise weight (1 - p) is initialized to 0
+            p = min(ep/num_ep_explore, 1) # p increased from 0 to 1 in "num_ep_explore" episodes
             while t_step <= max_t:
 
                 # predict action using the current policy
@@ -180,10 +180,8 @@ class ddpg_agent:
                 # exploration noise
                 a_noise = self.actor_noise.sample()  # shape (a_dim,)
 
-                # noise weight (1 - p) decreased from 1 to 0 in "num_ep_explore" episodes
-                if ep < num_ep_explore: 
-                    p = ep / num_ep_explore # p increased from 0 to 1 in "num_ep_explore" episodes
-                a_noise *= (1 - p) 
+                a_noise *= (1 - p) # noise weight (1 - p) decreased from 1 to 0 in "num_ep_eplore" episodes
+                
                 a = a_clean + a_noise # predicted action with added noise
                 
                 """
