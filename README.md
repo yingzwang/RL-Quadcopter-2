@@ -4,6 +4,15 @@
 
 In this project, I designed a reinforcement agent to fly a quadcopter. I chose deep deterministic policy gradient ([DDPG](https://arxiv.org/abs/1509.02971)) algorithm, which suits well the the continuous control problem of a quadcopter.
 
+## Implementations
+
+My DDPG agent is implemented using Tensorflow and Keras, in the folder `agents/`,
+- `ddpg.py`: DDPG agent, experience replay buffer, Ornstein-Uhlenbeck noise.
+- `actor_critic.py`: actor and critic neural network models.
+- `plot_utils.py`: utility functions for plotting the results.
+- `task.py`: task for the quadcopter.
+
+
 ## Project Instructions
 
 1. Clone the repository and navigate to the downloaded folder.
